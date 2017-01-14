@@ -10,7 +10,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'thin' 
 gem 'rails_12factor', group: :production
 
-ruby "2.3.1"
 group :development, :test do
   gem 'faker'
   gem 'byebug'
