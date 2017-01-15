@@ -1,3 +1,25 @@
-<% @users.each do |user| %>
-<%= user.email %></br>
-<% end %>
+<div class="page-header"> 
+  <h1 class="text-primary">Listing Users</h1>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th class="text-primary">UserName</th>
+      <th class="text-primary">Email</th>
+      <th class="text-primary">Created At</th>
+      <th class="text-primary">Last sign in at</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr class="text-primary">
+    <td><%=user.username%></td> 
+    <td><%=user.email%></td>
+    <td><%=user.created_at.in_time_zone("Pacific Time (US & Canada)")%></td>
+    <td><%=user.current_sign_in_at ? user.current_sign_in_at.in_time_zone("Pacific Time (US & Canada)") : ""%></td>
+    </tr>
+    
+    <%end%>
+  </tbody>
+</table>
